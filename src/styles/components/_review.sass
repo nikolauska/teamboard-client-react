@@ -1,0 +1,153 @@
+.review-overlay
+	width:   100%
+	z-index: 9001
+	height:  100%
+	@include position(fixed, 0px null null 0px)
+	background-color: rgba($ebony, 0.8)
+	.dialog.info
+		.slider.infocarousel
+			.slider-decorator-0,
+			.slider-decorator-1
+				visibility: visible
+				font-size: 3em
+
+				&:hover
+					color: #c4c4c4
+			.slider-decorator-2
+				display: none
+			.slider-frame
+				.slider-list
+					margin-top: 70px !important
+					li.slider-slide
+
+	.review-dialog-container
+		overflow-y: scroll
+		max-width: 700px
+		max-height: 85vh !important
+		margin: auto !important
+		border-radius: 0px
+		font-size: 160%
+		&::-webkit-scrollbar-track
+			opacity: 0
+		&::-webkit-scrollbar
+			width: 6px
+			opacity: 0
+		&::-webkit-scrollbar-thumb
+			background-color: #999999
+			&:active
+				background-color: #fff
+
+		.review-dialog
+			opacity: 0.3
+			@include transition(0.3s linear)
+
+			color:            $bastille
+			background-color: $white
+			&.active
+				opacity: 1
+
+			.ticket-color
+				height: 20px
+
+			.review-dialog-header
+				padding: 16px
+
+				font-size:      130%
+				letter-spacing: 1px
+
+				p
+					word-break: break-all
+
+			.review-dialog-heading
+				font-weight: bold
+				padding:     8px 16px
+				span
+					cursor: pointer
+					cursor: hand
+
+			.review-dialog-comments
+				padding: 8px 16px 16px 16px
+
+				.review-comment-wrapper
+					@include display(flex)
+					@include flex-direction(column)
+					border-top: 2px solid $silver-chalice
+					//overflow-y:       visible
+					background-color: $white
+
+					.review-comment
+						//height:     50px
+						//min-height: 50px
+
+						.review-comment-username
+							@include   margin(5 0 0 4)
+							font-size: smaller
+							color:     $dove-gray
+
+						.review-comment-message
+							@include margin(5 0 0 4)
+
+					.review-comment:not(:last-child)
+						border-bottom: 1px solid
+						border-color:  $silver-chalice
+
+			.review-dialog-content
+				padding:    8px 16px
+				overflow:   hidden
+				overflow-y: visible
+
+				span
+					cursor:        pointer
+					cursor:        hand
+					overflow-wrap: break-word
+
+					p
+						white-space: pre-wrap
+
+					h1, h2, h3, h4
+						@include margin(0px 0px 0px 0px)
+
+					img
+						display: block
+
+					code
+						display: block
+
+					a
+						//font-size:    13pt
+						padding:      0
+						display:      inline
+						color:        $neptune
+						border-width: 0px
+
+					blockquote
+						margin: 10px
+
+					ul
+						list-style-type: disc
+
+						li
+							margin-left:     20px
+							list-style-type: disc
+
+					ol
+						list-style-type: decimal
+
+						li
+							margin-left:     20px
+							list-style-type: decimal
+
+				@include display(flex)
+				@include flex-direction(column)
+
+@media screen and (max-width: 600px)
+	.review-overlay
+		.dialog.info
+			.slider.infocarousel
+				.slider-decorator-0,
+				.slider-decorator-1
+						visibility: visible
+						font-size: 2em
+
+		.review-dialog-container
+			font-size: 100%

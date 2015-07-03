@@ -10,7 +10,8 @@ export default {
 			'oldPassword',
 			'newPassword',
 			'newPasswordAgain',
-			'name'
+			'name',
+			'currentView'
 		],
 		loginSettings: {
 			title: 'Change password',
