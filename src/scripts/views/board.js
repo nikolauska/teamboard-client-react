@@ -135,23 +135,10 @@ export default React.createClass({
 		})
 	},
 
-	setReviewTickets(ticket, setForReview) {
-		let newArray = this.state.reviewTickets.slice();
-		newArray.push(ticket);
-		if(newArray.length > 0 && !setForReview){
-			newArray = newArray.filter((item) => {
-				return item.id !== ticket.id;
-			})
-		}
-		this.setState({
-			reviewTickets: newArray
-		});
-	},
-
 	sendTicketsForReview() {
-		return this.state.reviewTickets.filter ((item) => {
-			return item.content !== "" || item.heading !== "" || item.comments.length !== 0
-		});
+		// If needed we can use some checks here to filter
+		// 	out unneeded tickets here
+		return this.state.board.tickets;
 	},
 
 	render() {

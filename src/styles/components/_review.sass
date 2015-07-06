@@ -21,10 +21,9 @@
 					li.slider-slide
 
 	.review-dialog-container
-		overflow-y: scroll
-		max-width: 700px
-		max-height: 85vh !important
-		margin: auto !important
+		width: 700px
+		max-height: 85vh
+		margin: auto
 		border-radius: 0px
 		font-size: 160%
 		&::-webkit-scrollbar-track
@@ -43,6 +42,7 @@
 
 			color:            $bastille
 			background-color: $white
+
 			&.active
 				opacity: 1
 
@@ -50,13 +50,18 @@
 				height: 20px
 
 			.review-dialog-header
-				padding: 16px
+				overflow: hidden
+				text-overflow: ellipses
 
-				font-size:      130%
-				letter-spacing: 1px
+				.review-dialog-header-text
+					overflow: hidden
+					padding: 16px
+					margin: 0
 
-				p
-					word-break: break-all
+					font-size:      130%
+					letter-spacing: 1px
+
+					color: $white
 
 			.review-dialog-heading
 				font-weight: bold
@@ -72,20 +77,22 @@
 					@include display(flex)
 					@include flex-direction(column)
 					border-top: 2px solid $silver-chalice
-					//overflow-y:       visible
 					background-color: $white
 
 					.review-comment
-						//height:     50px
-						//min-height: 50px
+						padding-top:    8px
+						padding-bottom: 8px
+
+						.avatar
+							margin-right: 5px
 
 						.review-comment-username
-							@include   margin(5 0 0 4)
-							font-size: smaller
-							color:     $dove-gray
+							@include     margin(5 0 0 4)
+							font-size:   smaller
+							color:       $dove-gray
 
 						.review-comment-message
-							@include margin(5 0 0 4)
+							@include margin(8 0 0 4)
 
 					.review-comment:not(:last-child)
 						border-bottom: 1px solid

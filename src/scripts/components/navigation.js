@@ -29,9 +29,11 @@ export default React.createClass({
 
 	getInitialState() {
 		return {
-			dropdown: false, localesDropdown: false,
-			feedback: false, infoActive: false,
-			aboutActive: false, membersActive: false
+			dropdown: false,
+			feedback: false,
+			infoActive: false,
+			aboutActive: false,
+			membersActive: false
 		}
 	},
 
@@ -45,8 +47,6 @@ export default React.createClass({
 
 	toggleDropdown() {
 		this.setState({ dropdown: !this.state.dropdown });
-		if(this.state.localesDropdown)
-			this.setState({ localesDropdown: !this.state.localesDropdown });
 	},
 
 	toggleInfoView() {
@@ -134,11 +134,7 @@ export default React.createClass({
 				return page.show('/profile')
 			}
 			},
-			{ icon: 'language', content: 'Localization',
-				onClick: () => {
-					this.setState({ localesDropdown: !this.state.localesDropdown });
-				}
-			},
+			{ icon: 'language', content: 'Localization', disabled: true  },
 			{
 				content: (
 					<UserVoice>
@@ -197,7 +193,6 @@ export default React.createClass({
 					<span className="fa fa-fw fa-user"></span>
 				</div>
 				<Dropdown className='options' show={this.state.dropdown} items={items} />
-				<Dropdown className='locales' show={this.state.localesDropdown} items={locales} />
 				{infoDialog}
 				{boardMembersDialog}
 				{aboutDialog}
