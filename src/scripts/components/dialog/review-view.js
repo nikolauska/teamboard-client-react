@@ -3,7 +3,6 @@ import Carousel   from 'nuka-carousel';
 import markdown   from 'markdown';
 
 import Dialog     from '../../components/dialog';
-import Scrollable from '../../components/dialog/scrollable';
 import Avatar     from '../../components/avatar';
 
 /**
@@ -121,9 +120,7 @@ export default React.createClass({
 						  slideWidth={0.70}
 					      cellAlign="center"
 						  dragging={true}>
-
 					{this.renderTickets()}
-
 				</Carousel>
 			</Dialog>
 		);
