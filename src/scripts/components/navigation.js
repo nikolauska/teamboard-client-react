@@ -159,28 +159,6 @@ export default React.createClass({
 				icon: 'sign-out', content: 'Logout'
 			}
 		];
-		let locales = [
-			{flag: 'fi', content: 'Suomi', onClick: () => {
-					SettingsAction.setSetting('locale', 'fi');
-					this.toggleDropdown();
-				}
-			},
-			{flag: 'se', content: 'Svenska', onClick: () => {
-					SettingsAction.setSetting('locale', 'se');
-					this.toggleDropdown();
-				}
-			},
-			{flag: 'ru', content: 'русский', onClick: () => {
-					SettingsAction.setSetting('locale', 'ru');
-					this.toggleDropdown();
-				}
-			},
-			{flag: 'gb', content: 'English', onClick: () => {
-					SettingsAction.setSetting('locale', 'en');
-					this.toggleDropdown();
-				}
-			}
-		]
 		return (
 			<nav id="nav" className="nav">
 				<img className="logo" src="/dist/assets/img/logo.svg"
