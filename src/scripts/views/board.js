@@ -139,7 +139,6 @@ export default React.createClass({
 
 	sendTicketsForReview() {
 		// If needed we can use some checks here to filter out unneeded tickets
-		// in here
 		return this.state.board.tickets;
 	},
 
